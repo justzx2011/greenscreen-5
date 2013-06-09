@@ -19,7 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[[CameraVC alloc] initWithNibName:@"CameraVC" bundle:nil];
+    
+    self.cameraVC.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,11 +38,11 @@
     //if (self.capturedImages.count > 0)
     //    [self.capturedImages removeAllObjects];
     
-    //if ([UIImagePickerController isSourceTypeAvailable:sourceType])
-    //{
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType])
+    {
         [self.cameraVC setupImagePicker:sourceType];
         [self presentModalViewController:self.cameraVC.imagePickerController animated:YES];
-    //}
+    }
 }
 - (IBAction)cameraAcrion:(UIButton *)sender
 {

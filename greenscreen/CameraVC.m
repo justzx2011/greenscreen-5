@@ -24,7 +24,7 @@
     return self;
 }
 
-@synthesize delegate;
+//@synthesize delegate;
 
 - (void)viewDidLoad
 {

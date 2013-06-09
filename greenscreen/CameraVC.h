@@ -11,7 +11,9 @@
 @protocol CameraVCDelegate;
 
 @interface CameraVC : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
+{
+    id <CameraVCDelegate> delegate;
+}
 @property (nonatomic, retain) UIImagePickerController *imagePickerController;
 @property (nonatomic, assign) id <CameraVCDelegate> delegate;
 
